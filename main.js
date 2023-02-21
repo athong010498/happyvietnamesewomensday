@@ -56,7 +56,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         };
         async function GetAPI() {
            
-            const response = await fetch("http://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
+            const response = await fetch("https://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
             const data = await response.json();
             const { Data } = data;
             // console.log(Data);
@@ -126,7 +126,7 @@ var btnSearch = document.getElementById('btn_search');
         redirect: 'follow'
     };
     async function GetAPI() {
-        const response = await fetch("http://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
+        const response = await fetch("https://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
         const data = await response.json();
         const { Data } = data;
         console.log(Data);
