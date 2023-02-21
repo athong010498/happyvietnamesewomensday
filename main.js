@@ -56,7 +56,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         };
         async function GetAPI() {
            
-            const response = await fetch("https://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
+            const response = await fetch("http://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
             const data = await response.json();
             const { Data } = data;
             // console.log(Data);
@@ -96,7 +96,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 
 }
 
-const config = { fps: 10, qrbox: { width: 200, height: 200 } }
+const config = { fps: 60, qrbox: { width: 200, height: 200 } }
 html5Qrcode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 
 // var btnScanQR = document.getElementById('btn_scanQRcode');
@@ -126,7 +126,7 @@ var btnSearch = document.getElementById('btn_search');
         redirect: 'follow'
     };
     async function GetAPI() {
-        const response = await fetch("https://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
+        const response = await fetch("http://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
         const data = await response.json();
         const { Data } = data;
         console.log(Data);
@@ -145,12 +145,18 @@ var btnSearch = document.getElementById('btn_search');
         document.getElementById('img').textContent = Data[0].Img;
         document.getElementById("img").src = Data[0].Img; 
 
+        var notifyelementsuccess = document.getElementById("notifyelement_success");
+        notifyelementsuccess.style.display="block";
+        var notifyelementsuccess = document.getElementById("notifyelement_success");
+        notifyelement.style.display="none";
 
         }
         else{
             function notify(){
-            // var notifyelement = document.getElementById("notifyelement");
+            var notifyelement = document.getElementById("notifyelement");
             notifyelement.style.display="block";
+            var notifyelementsuccess = document.getElementById("notifyelement_success");
+            notifyelementsuccess.style.display="none";
             }
            notify();
 
