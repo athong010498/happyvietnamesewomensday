@@ -79,6 +79,11 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             notifyelementsuccess.style.display="block";
             var notifyelementsuccess = document.getElementById("notifyelement_success");
             notifyelement.style.display="none";
+
+            $('html, body').animate({
+                scrollTop: $('#id-2').offset().top
+            }, 500);
+            return false;
         }
         // html5Qrcode.pause();
         GetAPI();
@@ -149,6 +154,10 @@ var btnSearch = document.getElementById('btn_search');
         notifyelementsuccess.style.display="block";
         var notifyelementsuccess = document.getElementById("notifyelement_success");
         notifyelement.style.display="none";
+        $('html, body').animate({
+            scrollTop: $('#id-2').offset().top
+        }, 500);
+        return false;
 
         }
         else{
@@ -167,7 +176,6 @@ var btnSearch = document.getElementById('btn_search');
     GetAPI();
     document.getElementById('id_input').value ="";
 };
-
 
 
 function _inherits(SubClass, SuperClass) {
