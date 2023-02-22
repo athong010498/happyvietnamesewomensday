@@ -82,7 +82,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 
             $('html, body').animate({
                 scrollTop: $('#id-2').offset().top
-            }, 500);
+            }, 700);
             return false;
         }
         // html5Qrcode.pause();
