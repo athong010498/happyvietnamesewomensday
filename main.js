@@ -80,10 +80,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             var notifyelementsuccess = document.getElementById("notifyelement_success");
             notifyelement.style.display="none";
 
-            $('html, body').animate({
-                scrollTop: $('#id-2').offset().top
-            }, 700);
-            return false;
+            
         }
         // html5Qrcode.pause();
         GetAPI();
