@@ -21,10 +21,10 @@ var commons = function () {
 const html5Qrcode = new Html5Qrcode('reader');
 const url = "intershop.com.vn";
 const urlRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+var curtext = "";
+function qrCodeSuccessCallback(decodedText, decodedResult){
     if (decodedText) {
         document.getElementById('result').textContent = decodedText;
-        
     }
 
     
@@ -54,12 +54,15 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             body: raw,
             redirect: 'follow'
         };
+    
         async function GetAPI() {
-           
+            if(curtext == decodedText )
+                return console.log("Trùng qr");
+            curtext = decodedText;
             const response = await fetch("https://ims-apis.bpsvn.com/baseapi/get-data-list", requestOptions);
             const data = await response.json();
             const { Data } = data;
-            // console.log(Data);
+            console.log(Data);
 
             document.getElementById('item-name').textContent = Data[0].ItemsName;
             document.getElementById('lotnumber').textContent = Data[0].Lotnumber;
@@ -80,10 +83,14 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             var notifyelementsuccess = document.getElementById("notifyelement_success");
             notifyelement.style.display="none";
 
-            
+            $('html, body').animate({
+                scrollTop: $('#id-2').offset().top
+            }, 700);
+            return false;
         }
         // html5Qrcode.pause();
         GetAPI();
+        // setTimeout(GetAPI,30000);
         
     } else {
         console.log("Đây không phải là một URL hợp lệ");
@@ -98,7 +105,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 
 }
 
-const config = { fps: 10, qrbox: { width: 200, height: 200 } }
+const config = { fps: 1, qrbox: { width: 200, height: 200 } }
 html5Qrcode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 
 // var btnScanQR = document.getElementById('btn_scanQRcode');
