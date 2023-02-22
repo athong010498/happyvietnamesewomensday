@@ -32,7 +32,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         // console.log("Đây là một URL hợp lệ");
         
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwMjEuMTAyMTAwMDAwMSIsIm5iZiI6MTY3Njk0NDQxNywiZXhwIjoxNjc2OTg3NjE3LCJpYXQiOjE2NzY5NDQ0MTd9.KpfrcC-oceN7sV7F8U43mqLAPRSBMVOo1x_ZsF3b9xU");
+        myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwMjEuMTAyMTAwMDAwMSIsIm5iZiI6MTY3NzAyODIyNywiZXhwIjoxNjc3MDcxNDI3LCJpYXQiOjE2NzcwMjgyMjd9.oqTFlrAeBgKN_8mW7-LdJMfcaJp2m93XVjs-Lrqr0Y0");
         myHeaders.append("Content-Type", "application/json");
 
         var notifyelement = document.getElementById("notifyelement");
@@ -114,7 +114,7 @@ var btnSearch = document.getElementById('btn_search');
     
     const id = document.querySelector('#id_input').value;
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwMjEuMTAyMTAwMDAwMSIsIm5iZiI6MTY3Njk0NDQxNywiZXhwIjoxNjc2OTg3NjE3LCJpYXQiOjE2NzY5NDQ0MTd9.KpfrcC-oceN7sV7F8U43mqLAPRSBMVOo1x_ZsF3b9xU");
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwMjEuMTAyMTAwMDAwMSIsIm5iZiI6MTY3NzAyODIyNywiZXhwIjoxNjc3MDcxNDI3LCJpYXQiOjE2NzcwMjgyMjd9.oqTFlrAeBgKN_8mW7-LdJMfcaJp2m93XVjs-Lrqr0Y0");
     myHeaders.append("Content-Type", "application/json");
     var notifyelement = document.getElementById("notifyelement");
     notifyelement.style.display="none";
